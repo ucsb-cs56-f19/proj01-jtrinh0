@@ -3,11 +3,11 @@ A simple Spring Boot webapp using:
 * Pulling in Bootstrap from CDN.
 * Github OAuth
 
-# Author: Jessica Trinh (jtrinh0)
+Author: Jessica Trinh (jtrinh0)
 
-# GitHub Repo: https://ucsb-cs56-f19.github.io/lab07-jtrinh0/
+GitHub Repo: https://ucsb-cs56-f19.github.io/lab07-jtrinh0/
 
-# Heroku URL: http://cs56-f19-lab07-jtrinh0.herokuapp.com/
+Heroku URL: http://cs56-f19-lab07-jtrinh0.herokuapp.com/
 
 # Running on Localhost.
 
