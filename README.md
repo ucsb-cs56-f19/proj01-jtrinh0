@@ -3,6 +3,7 @@ A simple Spring Boot webapp using:
 * Pulling in Bootstrap from CDN.
 * Github OAuth
 
+# https://ucsb-cs56-f19.github.io/lab07-jtrinh0/
 
 # Running on Localhost.
 
