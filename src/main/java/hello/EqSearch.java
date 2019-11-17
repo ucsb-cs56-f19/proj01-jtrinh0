@@ -32,7 +32,7 @@ public class EqSearch {
      Sets the distance of the eq search
      @param distance distance of eq search
      */
-    public void setDistance() {
+    public void setDistance(int distance) {
         this.distance = distance;
     }
 
@@ -40,7 +40,7 @@ public class EqSearch {
      Sets the minmag of the eq search
      @param minmag minmag of eq search
      */
-    public void setMinmag() {
+    public void setMinmag(int minmag) {
         this.minmag = minmag;
     }
 }
