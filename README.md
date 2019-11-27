@@ -7,6 +7,10 @@ Author: Jessica Trinh (jtrinh0)
 
 GitHub Repo: https://ucsb-cs56-f19.github.io/lab07-jtrinh0/
 
+GitHub Page: https://ucsb-cs56-f19.github.io/lab07-jtrinh0/
+
+Javadoc: https://ucsb-cs56-f19.github.io/lab07-jtrinh0/apidocs/
+
 Heroku URL: http://cs56-f19-lab07-jtrinh0.herokuapp.com/
 
 Travis-CI: https://travis-ci.org/ucsb-cs56-f19/lab07-jtrinh0
