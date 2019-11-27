@@ -55,18 +55,20 @@ import hello.geojson.FeatureCollection;
     @GetMapping(&quot;/earthquakes/search&quot;)
     public String getEarthquakesSearch(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
             EqSearch eqSearch) {
-<span class="fc" id="L58">        EarthquakeQueryService e =</span>
-           new EarthquakeQueryService();
+<span class="fc" id="L58">        return &quot;earthquakes/search&quot;;</span>
+    }
 
-<span class="fc" id="L61">        model.addAttribute(&quot;eqSearch&quot;, eqSearch);</span>
-        
-<span class="fc" id="L63">        String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag());</span>
-<span class="fc" id="L64">        model.addAttribute(&quot;json&quot;, json);</span>
+    @GetMapping(&quot;/earthquakes/results&quot;)
+    public String getEarthquakesResults(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
+            EqSearch eqSearch) {
+<span class="nc" id="L64">        EarthquakeQueryService e = new EarthquakeQueryService();</span>
+<span class="nc" id="L65">        model.addAttribute(&quot;eqSearch&quot;, eqSearch);</span>
+<span class="nc" id="L66">        String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag());</span>
+<span class="nc" id="L67">        model.addAttribute(&quot;json&quot;, json);</span>
+<span class="nc" id="L68">        FeatureCollection featureCollection = FeatureCollection.fromJSON(json);</span>
+<span class="nc" id="L69">        model.addAttribute(&quot;featureCollection&quot;,featureCollection);</span>
 
-<span class="fc" id="L66">        FeatureCollection featureCollection = FeatureCollection.fromJSON(json);</span>
-<span class="fc" id="L67">        model.addAttribute(&quot;featureCollection&quot;,featureCollection);</span>
-
-<span class="fc" id="L69">        return &quot;earthquakes/search&quot;;</span>
+<span class="nc" id="L71">        return &quot;earthquakes/results&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
