@@ -21,10 +21,10 @@ public class Place {
     public String type;
 
      /**
-     * Create a List<Place> object from json representation
+     * Create a List object from json representation
      * 
      * @param json String of json returned by API endpoint {@code /classes/search}
-     * @return a new List<Place> object
+     * @return a new List object
      * @see <a href=
      *      "https://tools.ietf.org/html/rfc7946">https://tools.ietf.org/html/rfc7946</a>
      */
