@@ -3,10 +3,13 @@
 public class EqSearch {
     private int distance;
     private int minmag;
+    private double lat;
+    private double lon;
+    private String location;
 
     // No-arg constructor
-<span class="fc" id="L8">    public EqSearch() {</span>
-<span class="fc" id="L9">    }</span>
+<span class="fc" id="L11">    public EqSearch() {</span>
+<span class="fc" id="L12">    }</span>
 
     // Getters
 
@@ -15,7 +18,7 @@ public class EqSearch {
      @return distance of the eq search
     */
     public int getDistance() {
-<span class="fc" id="L18">        return this.distance;</span>
+<span class="fc" id="L21">        return this.distance;</span>
     }
 
     /**
@@ -23,9 +26,33 @@ public class EqSearch {
      @return minmag of the eq search
     */
     public int getMinmag() {
-<span class="fc" id="L26">        return this.minmag;</span>
+<span class="fc" id="L29">        return this.minmag;</span>
     }
 
+    /**
+     Returns the lat of the eq search
+     @return lat of the eq search
+    */
+    public double getLat() {
+<span class="fc" id="L37">        return this.lat;</span>
+    }
+
+    /**
+     Returns the lon of the eq search
+     @return lon of the eq search
+    */
+    public double getLon() {
+<span class="fc" id="L45">        return this.lon;</span>
+    }
+
+    /**
+     Returns the location of the eq search
+     @return location of the eq search
+    */
+    public String getLocation() {
+<span class="fc" id="L53">        return this.location;</span>
+    }
+    
     // Setters
 
     /**
@@ -33,15 +60,39 @@ public class EqSearch {
      @param distance distance of eq search
      */
     public void setDistance(int distance) {
-<span class="nc" id="L36">        this.distance = distance;</span>
-<span class="nc" id="L37">    }</span>
+<span class="nc" id="L63">        this.distance = distance;</span>
+<span class="nc" id="L64">    }</span>
 
     /**
      Sets the minmag of the eq search
      @param minmag minmag of eq search
      */
     public void setMinmag(int minmag) {
-<span class="nc" id="L44">        this.minmag = minmag;</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L71">        this.minmag = minmag;</span>
+<span class="nc" id="L72">    }</span>
+
+    /**
+     Sets the lat of the eq search
+     @param lat lat of eq search
+     */
+    public void setLat(double lat) {
+<span class="nc" id="L79">        this.lat = lat;</span>
+<span class="nc" id="L80">    }</span>
+
+    /**
+     Sets the lon of the eq search
+     @param lon long of eq search
+     */
+    public void setLon(double lon) {
+<span class="nc" id="L87">        this.lon = lon;</span>
+<span class="nc" id="L88">    }</span>
+
+    /**
+     Sets the location of the eq search
+     @param location location of eq search
+     */
+    public void setLocation(String location) {
+<span class="nc" id="L95">        this.location = location;</span>
+<span class="nc" id="L96">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
