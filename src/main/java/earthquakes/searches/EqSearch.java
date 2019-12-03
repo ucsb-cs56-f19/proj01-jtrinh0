@@ -83,7 +83,7 @@ public class EqSearch {
      Sets the lon of the eq search
      @param lon long of eq search
      */
-    public void setMinmag(double lon) {
+    public void setLon(double lon) {
         this.lon = lon;
     }
 
@@ -91,7 +91,7 @@ public class EqSearch {
      Sets the location of the eq search
      @param location location of eq search
      */
-    public void setMinmag(String location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 }
