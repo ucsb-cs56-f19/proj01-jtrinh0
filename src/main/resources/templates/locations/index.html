@@ -20,12 +20,12 @@
               </tr>
           </thead>
           <tbody>
-            <tr th:each="f: ${place}"> 
-                <td th:text="${f.id}"></td>
-                <td th:text="${f.placeId}"></td>
-                <td th:text="${f.name}"></td>
-                <td th:text="${f.latitude}"></td>
-                <td th:text="${f.longitude}"></td>
+            <tr th:each="p: ${locations}">
+                <td th:text="${p.id}"></td>
+                <td th:text="${p.placeId}"></td>
+                <td th:text="${p.name}"></td>
+                <td th:text="${p.latitude}"></td>
+                <td th:text="${p.longitude}"></td>
               </tr>
           </tbody>
       </table>
