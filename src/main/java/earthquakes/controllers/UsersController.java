@@ -15,7 +15,7 @@ public class UsersController {
 
     @Autowired
     public UsersController(UserRepository userRepository) {
-        this.userRepository = userRepository;   
+        this.userRepository = userRepository;
     }
     
     @GetMapping("/users")
