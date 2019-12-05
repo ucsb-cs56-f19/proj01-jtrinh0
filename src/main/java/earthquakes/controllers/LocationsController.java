@@ -23,6 +23,9 @@ import java.util.List;
 import earthquakes.entities.Location;
 import earthquakes.repositories.LocationRepository;
 
+import org.springframework.web.bind.annotation.PostMapping;
+
+
 @Controller
 public class LocationsController {
 
@@ -57,5 +60,12 @@ public class LocationsController {
         List<Place> place = Place.listFromJson(json);
         model.addAttribute("place", place);
         return "locations/results";
+    }
+
+    @PostMapping("/locations/add")
+    public String add(Location location, Model model) {
+      locationRepository.save(location);
+      model.addAttribute("locations", locationRepository.findAll());
+      return "locations/index";
     }
 }
