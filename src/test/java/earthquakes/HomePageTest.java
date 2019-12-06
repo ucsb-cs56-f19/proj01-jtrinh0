@@ -104,4 +104,12 @@ public class HomePageTest {
                 .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[4]/a").exists())
                 .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[4]/a").string("Favorites"));
     }
+
+    @Test
+    public void getHomePage_hasAdminLink() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[5]/a").exists())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[5]/a").string("Admin"));
+    }
 }

@@ -29,6 +29,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 
 import org.springframework.web.bind.annotation.PathVariable;
 
+import earthquakes.entities.AppUser;
+
 
 @Controller
 public class LocationsController {
@@ -42,8 +44,11 @@ public class LocationsController {
     }
 
     @GetMapping("/locations")
-    public String index(Model model) {
-        Iterable<Location> locations = locationRepository.findAll();
+    public String index(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken) {
+        if (oAuth2AuthenticationToken == null) return "";
+        String uid = oAuth2AuthenticationToken.getPrincipal().getAttributes().get("id").toString();
+        // Iterable<Location> locations = locationRepository.findAll();
+        Iterable<Location> locations = locationRepository.findByUid(uid);
         model.addAttribute("locations", locations);
         return "locations/index";
     }
@@ -67,9 +72,13 @@ public class LocationsController {
     }
 
     @PostMapping("/locations/add")
-    public String add(Location location, Model model) {
+    public String add(Location location, Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken) {
+      if (oAuth2AuthenticationToken == null) return "";
+      String uid = oAuth2AuthenticationToken.getPrincipal().getAttributes().get("id").toString();
+      location.setUid(uid);
       locationRepository.save(location);
-      model.addAttribute("locations", locationRepository.findAll());
+    //   model.addAttribute("locations", locationRepository.findAll());
+    model.addAttribute("locations", locationRepository.findByUid(uid));
       return "locations/index";
     }
 
@@ -80,5 +89,12 @@ public class LocationsController {
     locationRepository.delete(location);
     model.addAttribute("locations", locationRepository.findAll());
     return "locations/index";
-}
+    }
+
+    @GetMapping("/locations/admin")
+    public String admin(Model model) {
+        Iterable<Location> locations = locationRepository.findAll();
+        model.addAttribute("locations", locations);
+        return "locations/admin";
+    }
 }
